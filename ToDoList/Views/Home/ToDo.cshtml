@@ -1,0 +1,19 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ToDo
+<h3 class="text-center">To Do List</h3>
+<form method="post" asp-action="Create" asp-controller="Home" class="form-control">
+    <div class="md-3">
+        <label asp-for="Description" class="form-label">To Do</label>
+        <input type="text" asp-for="Description" class="form-control"/>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="TodoList">To do List </a>
+    </div>
+    
+</form>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoList.MAP\ToDoList.MAP.csproj" />
+    <ProjectReference Include="..\ToDoList.MODEL\ToDoList.MODEL.csproj" />
+  </ItemGroup>
+
+</Project>

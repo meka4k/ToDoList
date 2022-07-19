@@ -1,0 +1,30 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<ToDo>
+<h3 class="text-center">To Do List Page</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Content</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <th>@(i+1)</th>
+                <td style=" text-decoration: @(Model[i].is_completed ==true? "line-through red":"none")">@Model[i].Description</td>
+<td>
+
+<a class="big-icon" asp-controller="TodoList" asp-action="Edit" asp-route-id="@Model[i].ID"><i class="bi bi-pencil-square"></i></a>
+                    <a class="big-icon margin-icon" asp-controller="TodoList" asp-action="Delete" asp-route-id="@Model[i].ID"><i class="bi bi-x-circle"></i></a>
+                    <a class="big-icon margin-icon" asp-controller="TodoList" asp-action="isCompleted" asp-route-id="@Model[i].ID"><i class="bi bi-check"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
